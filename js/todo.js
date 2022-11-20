@@ -9,7 +9,9 @@ new Vue({
       this.$refs.todoText.value = "";
     },
     deleteitem: function (index) {
-      this.todoList.splice(index, 1);
+      if (confirm("「" + this.todoList[index] + "」のtodoを削除しますか？")) {
+        this.todoList.splice(index, 1);
+      }
     },
   },
 });
