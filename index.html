@@ -13,9 +13,10 @@
     <input type="text" v-on:keypress.enter.prevent="additem($event.target.value)" ref="todoText" placeholder="New Todo">
   </label>
   <br>
+    <input type="text" v-model="keyword" placeholder="Search Keyword">
   <ul>
-    <li v-for="(todo, index) in todoList">{{ todo }}
-      <button v-on:click="deleteitem(index)">削除</button>
+    <li v-for="(todo, index) in filteredTodo">{{ todo }}
+      <button v-on:click="deleteitem(todo)">削除</button>
     </li>
   </ul>
 </div>
