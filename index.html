@@ -6,12 +6,14 @@
 </head>
 <body>
 <div id="app">
-  <form>
-    <input type="text" v-on:keypress.enter.prevent="additem($event.target.value)" ref="todoText">
-  </form>
+  <label>
+    <input type="text" v-on:keypress.enter.prevent="additem($event.target.value)" ref="todoText" placeholder="New Todo">
+  </label>
   <br>
   <ul>
-    <li v-for="todo in todoList">{{ todo }}</li>
+    <li v-for="(todo, index) in todoList">{{ todo }}
+      <button v-on:click="deleteitem(index)">削除</button>
+    </li>
   </ul>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>

@@ -8,5 +8,8 @@ new Vue({
       this.todoList.push(arg);
       this.$refs.todoText.value = "";
     },
+    deleteitem: function (index) {
+      this.todoList.splice(index, 1);
+    },
   },
 });
